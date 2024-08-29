@@ -1,6 +1,6 @@
 var XLSX = require("xlsx");
 var workbook = XLSX.readFile("telefones.ods");
-var worksheet = workbook.Sheets["Sheet1"]
+var ws = workbook.Sheets["Sheet1"]
 
 
 
@@ -8,7 +8,11 @@ var worksheet = workbook.Sheets["Sheet1"]
 
 
 
-getLastRow(worksheet)
 
 
+for (let i = 1; i < 250; i++) {
+    console.log(ws["B"+i].v);
+    
+
+}
 

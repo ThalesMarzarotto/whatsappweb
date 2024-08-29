@@ -4,10 +4,10 @@ const qrcode = require('qrcode-terminal');
 var XLSX = require("xlsx");
 
 var workbook = XLSX.readFile("telefones.ods");
-var worksheet = workbook.Sheets["Sheet1"]
+var ws = workbook.Sheets["Sheet1"]
 
 function sleepms(ms) {
-    return new Promise (resolve=>setTimeout(ms, resolve))
+    return new Promise (resolve=>setTimeout( resolve, ms))
 }
 
 function getLastRow(ws) {
@@ -37,12 +37,12 @@ let count =1
 
 client.on('ready', async () => {
     console.log('Client is ready!');
-    for (let i = 1; i < getLastRow(worksheet)+1; i++) {
-        if ( ws["C"+i].v === "false") {
+    for (let i = 1; i < 250; i++) {
+        if ( ws["B"+i].v === "false") {
             let number = ws["A"+i].v + "@c.us"
             await sleepms(2000)
             await client.sendMessage(number, template)
-            ws["C"+i].v = "true"
+            ws["B"+i].v = "true"
         }
     }
  XLSX.writeFile(workbook, "./telefones.ods");
