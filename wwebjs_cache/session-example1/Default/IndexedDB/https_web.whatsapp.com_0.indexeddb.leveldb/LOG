@@ -1,0 +1,14 @@
+2024/08/29-21:40:23.259 3a4c Reusing MANIFEST C:\Users\Thales\programs\whatsappweb\wwebjs_cache\session-example1\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/08/29-21:40:23.260 3a4c Recovering log #83
+2024/08/29-21:40:23.309 3a4c Reusing old log C:\Users\Thales\programs\whatsappweb\wwebjs_cache\session-example1\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000083.log 
+2024/08/29-21:40:23.309 3a4c Delete type=2 #81
+2024/08/29-21:40:27.539 3a4c Level-0 table #88: started
+2024/08/29-21:40:27.548 3a4c Level-0 table #88: 161814 bytes OK
+2024/08/29-21:40:27.550 3a4c Delete type=0 #83
+2024/08/29-21:40:27.551 3a4c Manual compaction at level-0 from '\x001\x00\x00\x00' @ 72057594037927935 : 1 .. '\x002\x00\x00\x00' @ 0 : 0; will stop at '\x001\x00\x00\x05' @ 191240 : 1
+2024/08/29-21:40:27.551 3a4c Compacting 1@0 + 1@1 files
+2024/08/29-21:40:27.669 3a4c Generated table #89@0: 62511 keys, 1190275 bytes
+2024/08/29-21:40:27.669 3a4c Compacted 1@0 + 1@1 files => 1190275 bytes
+2024/08/29-21:40:27.670 3a4c compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/08/29-21:40:27.670 3a4c Delete type=2 #88
+2024/08/29-21:40:27.671 3a4c Manual compaction at level-0 from '\x001\x00\x00\x05' @ 191240 : 1 .. '\x002\x00\x00\x00' @ 0 : 0; will stop at (end)

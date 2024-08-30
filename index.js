@@ -37,12 +37,20 @@ let count =1
 
 client.on('ready', async () => {
     console.log('Client is ready!');
-    for (let i = 1; i < 250; i++) {
+    for (let i = 13; i < 18; i++) {
         if ( ws["B"+i].v === "false") {
-            let number = ws["A"+i].v + "@c.us"
-            await sleepms(2000)
+            let number = ws["E"+i].v + "@c.us"
+            if(client.isRegisteredUser(number)){
+                    await sleepms(Math.random()*1000)
+                let template = templates[Math.floor(Math.random()*4)]
             await client.sendMessage(number, template)
             ws["B"+i].v = "true"
+            } else {
+                ws["B"+i].v = "not registered"
+
+            }
+        
+        
         }
     }
  XLSX.writeFile(workbook, "./telefones.ods");
@@ -86,24 +94,11 @@ client.on("authenticated", (session)=>{
 
 client.initialize();
 
-let template = `
-*🌟 Atenção, moradores da Região Metropolitana de Porto Alegre! 🌟*
 
-Você está em busca de uma administração condominial eficiente, transparente e que realmente se preocupa com o bem-estar do seu condomínio? Nós da ThM Administradora estamos aqui para oferecer soluções personalizadas para o seu condomínio!
-
-- *Gestão Financeira Transparente*: Controle financeiro com clareza e prestação de contas acessível. 
-- *Atendimento de Qualidade*: Equipe preparada para atender as necessidades do seu condomínio de forma rápida e eficaz. 
-- *Consultoria Jurídica*: Suporte completo para questões legais e regulamentares.
-
-🚀 Transforme a administração do seu condomínio em uma experiência tranquila e organizada!
-
-Entre em contato conosco e descubra como podemos ajudar a manter seu condomínio em perfeita ordem.
-
- 📞 Fale conosco por esse numero caso deseje mais informações
+let templates = [ "Olá, tudo bem?", "Olá, como vai voce?", "Oi, tudo bem?", "Olá", "Oi" ]
 
 
-*ThM Administração*
-`
+
 
 
 // PrivateChat {
